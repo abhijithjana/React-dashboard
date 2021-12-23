@@ -15,6 +15,7 @@ body{
     box-sizing: border-box;
     width: 300px;
     height: 100%;
+    transition: width 1s ease;
 }
 ul{
     margin: 0;
@@ -52,9 +53,11 @@ height: 40px;
     right: 0;
     transform: translateY(-50%);
     cursor: pointer;
+    transition: right 1.5s ease;
 }
 .slidmenu.inactive .toggle{
    right: -50px;
+   transform: rotate(180deg);
 }
 
 
@@ -84,4 +87,111 @@ height: 40px;
     height: 35px;
   
     text-align: center;
+}
+
+.slidmenu .divider{
+    height: 1px;
+    width: 100%;
+    background-color: #666;
+    border-radius: 1px;
+}
+
+.slidmenu .main-menu .main-menu-item{
+    color: #666;
+    font-size: 15px;
+    font-weight: 700;
+   opacity: 1;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+   
+
+}
+.slidmenu .main-menu .main-menu-item span{
+position: absolute;
+line-height: 40px;
+transition: opacity 1s ease;
+
+}
+.slidmenu.inactive .main-menu .main-menu-item span{
+   opacity: 0;
+   height: 0;
+   width: 0;
+   overflow: hidden;
+    }
+.slidmenu .main-menu{
+    margin: 15px 0;
+}
+.slidmenu .main-menu .main-menu-item .mainmenu-icon{
+    display: inline-block;
+   height: 40px;
+   width: 40px;
+   line-height: 40px;
+   text-align: center;
+   
+
+}
+
+.slidmenu .main-menu .submenu{
+    color: #666;
+    margin-left: 20px;
+    box-sizing: border-box;
+    border-left: 1px solid #666;
+    padding-left: 30px;
+    height: 0;
+    overflow:hidden;
+    transition: height 0.2s ease;
+}
+.slidmenu .main-menu .submenu.active{
+    height:auto ;
+   
+}
+
+.slidmenu .main-menu .submenu a{
+    display: block;
+    margin: 5px 0;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: 600;
+
+}
+.slidmenu .sidemenu-footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #666;
+    width: 100%;
+}
+
+.slidmenu .sidemenu-footer .user-image{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin: 5px 0;
+
+}
+.slidmenu .sidemenu-footer .user-image img{
+    width: 100%;
+    height: 100%;
+}
+.slidmenu .sidemenu-footer .userinfo{
+    display: inline-block;
+    margin: 5px 5px;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+.slidmenu .sidemenu-footer .userinfo h5{
+    font-size: 15px;
+    font-weight: 600;
+}
+.slidmenu .sidemenu-footer .userinfo p{
+    font-size: 14px;
+    
+}
+.slidmenu.inactive .sidemenu-footer .userinfo{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
