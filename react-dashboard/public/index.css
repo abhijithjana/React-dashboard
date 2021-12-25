@@ -53,7 +53,7 @@ height: 40px;
     right: 0;
     transform: translateY(-50%);
     cursor: pointer;
-    transition: right 1.5s ease;
+    transition: right 1s ease;
 }
 .slidmenu.inactive .toggle{
    right: -50px;
@@ -194,4 +194,12 @@ transition: opacity 1s ease;
     width: 0;
     height: 0;
     overflow: hidden;
+}
+
+.test{
+    margin-left: 305px;
+    transition: margin-left 1s ease;
+}
+.test.inactive{
+    margin-left: 85px;
 }

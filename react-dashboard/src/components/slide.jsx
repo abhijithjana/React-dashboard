@@ -1,16 +1,30 @@
 import React, { useState } from "react";
+
 import Logo from "../assest/logo.png"
 import User from '../assest/user.png'
 import Mainmenu from "./Mainmanu";
-function Slide(){
+import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+
+
+function Slide(props){
+  
     const [togstate,setstate]=useState(false);
-  function ToggleChk(){
+
+    
+  const ToggleChk=()=>{
+  
     if(!togstate){
         document.querySelectorAll('.submenu').forEach(element => {
          element.classList.remove('active');   
         });
     }
+   
+    
+    
   }
+
         
   
  
@@ -24,20 +38,22 @@ function Slide(){
     submenu:[{name:"projects"},{name:"Achivement"},{name:"About"}]
 
     },{name:"Design",
-    to:'/Design',
+    to:'/design',
     icon:"bi bi-vector-pen"}];
     
 
     return(<div className={`slidmenu  ${togstate?'inactive':''}`}>
+
          <div className="top-section">
              <div className="logo">
                 <img src={Logo} alt="logo"/>
              </div>
 
              <div className="toggle" onClick={()=>{
+                  props.OnCollaps(togstate);
                  ToggleChk();
                 setstate(!togstate);
-                
+               
                 console.log(togstate)
              }}>
              <i class="bi bi-arrow-left-square-fill"></i>
@@ -49,6 +65,7 @@ function Slide(){
 
 
         <div className="search">
+      
            
                
             
