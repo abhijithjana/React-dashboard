@@ -199,6 +199,8 @@ transition: opacity 1s ease;
 .test{
     margin-left: 305px;
     transition: margin-left 1s ease;
+    position: absolute;
+    top: 5px;
 }
 .test.inactive{
     margin-left: 85px;

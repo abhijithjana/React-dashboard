@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-
+import Content from "./Content";
+import Design from "./Design";
 import Logo from "../assest/logo.png"
 import User from '../assest/user.png'
 import Mainmenu from "./Mainmanu";
-import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    useRoutes,
+  } from "react-router-dom"
 
 
 
@@ -29,17 +35,18 @@ function Slide(props){
   
  
     const main=[{name:"Dashboard",
-    to:'/',
+    To:'/',
     icon:"bi bi-speedometer"},
     {
         name:"Content",
-    to:'/content',
+    To:'/content',
     icon:"bi bi-body-text" ,
     submenu:[{name:"projects"},{name:"Achivement"},{name:"About"}]
 
     },{name:"Design",
-    to:'/design',
+    To:'/design',
     icon:"bi bi-vector-pen"}];
+    const [state,setState]=useState(false);
     
 
     return(<div className={`slidmenu  ${togstate?'inactive':''}`}>
@@ -77,13 +84,18 @@ function Slide(props){
 
         <div className="divider"></div>
 
-        <div className="main-menu">
+     
+                  
+<BrowserRouter>
+
+<div className="main-menu">
         <ul>
      {main.map((item,index)=>(
        
      
      <Mainmenu Name={item.name}
          Icon={item.icon}
+         To={item.To}
          Submenu={item.submenu || []}
          state={togstate}
          onClick={()=>{
@@ -107,6 +119,38 @@ if(togstate){
             </div>
             
         </div>
+
+
+
+
+
+
+<div className={`test ${togstate?'inactive':''}`}>
+
+<Routes>
+
+<Route  path="/"  />
+<Route  path="content" element={<Content/>} />
+<Route path="design" element={<Design />} />
+
+
+    
+    <Route
+    path="*"
+    element={
+      <main style={{ padding: "1rem" ,margin:"0 0 0 300px"}}>
+        <p>There's nothing here!</p>
+      </main>}
+      >
+      </Route> 
+    
+    
+      
+     
+    </Routes>
+    </div>
+
+</BrowserRouter>
 
     </div>
     );

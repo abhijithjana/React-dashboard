@@ -2,11 +2,11 @@ import React from  'react'
 import Slide from './slide';
 
 
-function Test1(props) {
+function Content(props) {
 
     return(<div >
      
-     <h1>Dashboard</h1>
+     <h1>Content</h1>
     </div>);
 }
-export default Test1;
+export default Content;
